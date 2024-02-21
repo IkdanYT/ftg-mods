@@ -223,13 +223,13 @@ class ChatGPT(loader.Module):
     async def _get_chat_completion(self, prompt: str) -> str:
         resp = await self._make_request(
             method="POST",
-            url="https://api.openai.com/v1/chat/completions",
+            url="https://api.webraft.in/v1/chat/completions",
             headers={
                 "Content-Type": "application/json",
                 "Authorization": f'Bearer {self.config["api_key"]}',
             },
             data={
-                "model": "gpt-3.5-turbo",
+                "model": "gpt-4-1106-preview",
                 "messages": [{"role": "user", "content": prompt}],
             },
         )
